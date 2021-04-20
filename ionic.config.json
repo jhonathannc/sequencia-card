@@ -1,0 +1,7 @@
+{
+  "name": "sequencia-card",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
