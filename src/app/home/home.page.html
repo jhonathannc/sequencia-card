@@ -1,20 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Sequencia Card v1.0beta
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <div class="titulo">
+      <strong>Pronto para começar?</strong>
+      <p>Clique em 
+        <ion-text color="secondary">
+          <strong>INICIAR JOGO</strong>
+        </ion-text>
+      no rodape!</p>
+    </div>
+
+    <div class="mesa">
+      <div class="monte">
+        <p>mesa</p>
+        <img src="" alt="monte">
+      </div>
+      <div class="deck">
+        <p>deck</p>
+        <img src="/assets/cards/verso-carta.png" alt="deck">
+      </div>
+    </div>
+
+    <div class="minha-mao">
+      <div class="carta-1"></div>
+      <div class="carta-2"></div>
+      <div class="carta-3"></div>  
+      <div class="carta-4"></div>
+      <div class="carta-5"></div>
+      <div class="carta-6"></div>
+    </div>
+    
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <ion-button color="primary" (click) ="iniciarJogo()">Iniciar Jogo</ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
