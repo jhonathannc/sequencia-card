@@ -1,6 +1,11 @@
+
 #container {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  background-image: url("/assets/bg.jpg");
+  background-repeat: no-repeat;
+background-position: center;
+  
 }
 
 #container strong {
@@ -21,35 +26,89 @@
   margin-top: 1rem;
 }
 
+
+#container .body{
+
+  width: auto;
+  text-align: center;
+}
+
+
 #container .mesa {
-  width: 100%;
-  height: 60%;
-  display: flex;
-  padding: 10px;
+
+  display: grid;
+  width: 640px;
+  height: 360px;
+  margin: 0 auto;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 10px;
+  text-align: center;
 }
 
 #container .mesa .monte {
-  width: 80%;
+
+  grid-column: 4;
+  grid-row: 2;
+  width: 90%;
   text-align: center;
+  justify-content: center;
+
 }
 
 #container .mesa .deck {
-  margin-top: 10px;
-  width: 20%;
-  text-align: center;
+
+  grid-column: 6;
+  grid-row: 2;
+  width: 90%;
+  text-align:center;
+  justify-content: center;
 }
 
-#container .minha-mao {
-  width: 100%;
-  height: 40%;
+#container .mesa .minha-mao {
+  grid-column: 4/7;
+  grid-row: 4;
+  width: auto;
   display: flex;
   justify-content: center;
+}
+#container .mesa .bot1 {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  width: 80%;
+  height: 50%;
+  justify-content: center;
+}
+
+#container .mesa .p-jogada{
+
+  grid-column: 5;
+  grid-row: 3;
+
+}
+
+#container .mesa .b1-jogada{
+
+
+  grid-column: 2;
+  grid-row: 2;
+  transform: rotate(90deg);
 }
 
 #container .minha-mao div {
   padding: 1px;
   font-size: 1rem;
   text-align: center;
+  width: 120px;
+  height: 60px;
+}
+#container .bot1 div {
+
+  transform: rotate(90deg);
+  padding: 1px;
+  font-size: 1rem;
+  text-align: center;
   width: 50px;
   height: 50px;
+  margin-left: 20px;
 }
