@@ -62,7 +62,8 @@ export class HomePage {
     img.setAttribute('src', `/assets/cards/${carta.imagem}`)
     // img.setAttribute('width', '50%')
     // img.setAttribute('height', '50%')
-    img.style.margin = '5px'
+    img.style.maxWidth='160%'
+    img.style.width='90px'
 
     return img
   }

@@ -1,10 +1,10 @@
 
 #container {
-  width: auto;
-  height: auto;
+  width: 840;
+  height: 720;
   background-image: url("/assets/bg.jpg");
   background-repeat: no-repeat;
-background-position: center;
+  background-position: center;
   
 }
 
@@ -16,7 +16,7 @@ background-position: center;
 #container p {
   font-size: 16px;
   line-height: 22px;
-  color: #8c8c8c;
+  color: #faf5f5;
   margin: 0;
 }
 
@@ -31,6 +31,7 @@ background-position: center;
 
   width: auto;
   text-align: center;
+  
 }
 
 
@@ -44,6 +45,7 @@ background-position: center;
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px;
   text-align: center;
+  
 }
 
 #container .mesa .monte {
@@ -53,6 +55,7 @@ background-position: center;
   width: 90%;
   text-align: center;
   justify-content: center;
+  color: beige;
 
 }
 
@@ -63,20 +66,21 @@ background-position: center;
   width: 90%;
   text-align:center;
   justify-content: center;
+  color: beige;
 }
 
 #container .mesa .minha-mao {
   grid-column: 4/7;
   grid-row: 4;
-  width: auto;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 #container .mesa .bot1 {
   grid-column: 1;
-  grid-row: 1 / 4;
-  width: 80%;
-  height: 50%;
+  grid-row: 2 / 4;
+  width: 90%;
+  height: 60%;
   justify-content: center;
 }
 
@@ -99,9 +103,17 @@ background-position: center;
   padding: 1px;
   font-size: 1rem;
   text-align: center;
-  width: 120px;
-  height: 60px;
+  width: 300px;
+  height: 70px;
 }
+
+#container .minha-mao div:hover {
+ 
+  box-shadow:1px 1px 10px rgba($color: #f0ecec, $alpha: 1.0)
+  
+}
+
+
 #container .bot1 div {
 
   transform: rotate(90deg);
@@ -109,6 +121,6 @@ background-position: center;
   font-size: 1rem;
   text-align: center;
   width: 50px;
-  height: 50px;
-  margin-left: 20px;
+  height: 35px;
+  margin-left: 30px;
 }
