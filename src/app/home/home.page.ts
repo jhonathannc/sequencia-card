@@ -5,76 +5,93 @@ import { Component } from '@angular/core';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage
+{
 
-  
-
-  constructor() {
-  }
+  constructor() {}
 
   cards = [
-    {
-      id: 1,
-      imagem: 'carta-arco.png'
-    },
-    {
-      id: 2,
-      imagem: 'carta-armadilha.png'
-    },
-    {
-      id: 3,
-      imagem: 'carta-escudo.png'
-    },
-    {
-      id: 4,
-      imagem: 'carta-espada.png'
-    },
-    {
-      id: 5,
-      imagem: 'carta-machado.png',
-    },
-    {
-      id: 6,
-      imagem: 'carta-pocao.png'
-    }
+    {imagem:'sword.png'},
+    {imagem:'axe.png'},
+    {imagem:'shield.png'},
+    {imagem:'bow.png'},
+    {imagem:'potion.png',}, 
+    {imagem:'trap.png'}
   ]
-  
-  iniciarJogo () {
-
-    this.resetaCartasNaMao()
-
-    //contando carta de 1 a 6
-    for (var gridCarta = 1; gridCarta <= 6 ; gridCarta++) {
-      let idCarta = Math.floor(Math.random() * 5) + 1
-
-      this.cards.forEach((carta) => {
-        if (carta.id == idCarta) {
-          let imgCarta = this.criaCartaNaMao(carta)
-          document.querySelector(`.carta-${gridCarta}`).append(imgCarta) 
-        }
-      })
       
-    }
-  }
 
-  criaCartaNaMao (carta) {
+  iniciarJogo () 
+  {
+        this.resetaCartasNaMao()
+
+        var tmp, current, top = this.cards.length;
+        let imgCarta, handBot, handPlayer
+         
+
+            //<EMABARALHA CARTAS DO ARRAY>
+                if(top) while(--top) 
+                  {
+                     current = Math.floor(Math.random() * (top + 1));
+                     tmp = this.cards[current];
+                     this.cards[current] = this.cards[top];
+                     this.cards[top] = tmp;
+                  }
+            //</EMABARALHA>
+
+            //<DISTRIBUI CARTAS>
+
+                   handPlayer= this.cards.slice(0,3)
+                   handBot = this.cards.slice(3,6)
+
+            //</DISTRIBUI CARTAS>
+                  
+            //<COLOCA A IMAGEM DA CARTA NA LISTA>
+                  handPlayer.forEach((carta) =>
+                      {                            
+                          imgCarta = this.criaCartaNaMao(carta)
+                          const div = document.getElementById("id");
+                          div.appendChild(imgCarta); 
+                         
+                      })         
+            //</COLOCA A IMAGEM DA CARTA NA LISTA> 
+
+            
+                 
+    }
+ 
+ criaCartaNaMao (carta) 
+  {
     let img = document.createElement('img')
     img.setAttribute('src', `/assets/cards/${carta.imagem}`)
-    // img.setAttribute('width', '50%')
-    // img.setAttribute('height', '50%')
-    img.style.maxWidth='160%'
-    img.style.width='90px'
+    // img.style.maxWidth='110%'
+    img.style.width='55px'
+    img.onclick = function selecionaCarta() {
 
+      let selectCard = carta.imagem
+      let vezdeJogar = true
+
+      if(vezdeJogar){
+
+        let jogada = document.querySelector("#pJogada");
+        jogada.setAttribute('src', `/assets/cards/${selectCard}`);
+      }
+          
+    }
+    
     return img
   }
 
-  resetaCartasNaMao () {
-    for (var carta = 1; carta <= 6 ; carta++) {
-      let gridCarta = document.querySelector(`.carta-${carta}`)
+ 
+ resetaCartasNaMao () 
+  {
+    for (var carta = 1; carta <= 6 ; carta++)
+     {
+       let gridCarta = document.getElementById("id");
 
-      if(gridCarta != null)
-        gridCarta.innerHTML = ''
-    }
+       if(gridCarta != null)
+         gridCarta.innerHTML = ''
+     }
   }
-
 }
+
+
